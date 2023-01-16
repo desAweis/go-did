@@ -17,16 +17,16 @@ import (
 
 // Document represents a DID Document as specified by the DID Core specification (https://www.w3.org/TR/did-core/).
 type Document struct {
-	Context              []ssi.URI                 `json:"@context"`
-	ID                   DID                       `json:"id"`
-	Controller           []DID                     `json:"controller,omitempty"`
-	VerificationMethod   VerificationMethods       `json:"verificationMethod,omitempty"`
-	Authentication       VerificationRelationships `json:"authentication,omitempty"`
-	AssertionMethod      VerificationRelationships `json:"assertionMethod,omitempty"`
-	KeyAgreement         VerificationRelationships `json:"keyAgreement,omitempty"`
-	CapabilityInvocation VerificationRelationships `json:"capabilityInvocation,omitempty"`
-	CapabilityDelegation VerificationRelationships `json:"capabilityDelegation,omitempty"`
-	Service              []Service                 `json:"service,omitempty"`
+	Context              []ssi.URI                     `json:"@context"`
+	ID                   did.DID                       `json:"id"`
+	Controller           []did.DID                     `json:"controller,omitempty" metadata:",optional"`
+	VerificationMethod   did.VerificationMethods       `json:"verificationMethod,omitempty" metadata:",optional"`
+	Authentication       did.VerificationRelationships `json:"authentication,omitempty" metadata:",optional"`
+	AssertionMethod      did.VerificationRelationships `json:"assertionMethod,omitempty" metadata:",optional"`
+	KeyAgreement         did.VerificationRelationships `json:"keyAgreement,omitempty" metadata:",optional"`
+	CapabilityInvocation did.VerificationRelationships `json:"capabilityInvocation,omitempty" metadata:",optional"`
+	CapabilityDelegation did.VerificationRelationships `json:"capabilityDelegation,omitempty" metadata:",optional"`
+	Service              []did.Service                 `json:"service,omitempty" metadata:",optional"`
 }
 
 type VerificationMethods []*VerificationMethod
