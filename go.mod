@@ -1,4 +1,4 @@
-module github.com/desAweis/go-did
+module github.com/nuts-foundation/go-did
 
 go 1.15
 
@@ -8,3 +8,4 @@ require (
 	github.com/shengdoushi/base58 v1.0.0
 	github.com/stretchr/testify v1.8.1
 )
+replace github.com/nuts-foundation/go-did => github.com/desAweis/go-did@v0.0.1
